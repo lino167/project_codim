@@ -1,0 +1,29 @@
+# Editor e sistema
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Logs e temporários
+*.log
+*.tmp
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+
+# Python
+venv/
+__pycache__/
+
+# Env
+.env
+
+# Outras pastas comuns
+coverage/
+.sass-cache/
+.next/
+
+# Scripts locais
+scripts/*.local.*
