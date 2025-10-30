@@ -1,7 +1,8 @@
 $ErrorActionPreference = 'Stop'
 
 # Caminho do repositório (pasta deste script)
-$RepoPath = Split-Path -Parent $MyInvocation.MyCommand.Path
+# Define o diretório raiz do repositório (pai da pasta scripts)
+$RepoPath = (Get-Item $MyInvocation.MyCommand.Path).Directory.Parent.FullName
 Set-Location $RepoPath
 
 # Verifica se Git está disponível
