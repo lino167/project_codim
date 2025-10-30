@@ -7,15 +7,14 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#0A0A0A',
-      red: '#D90429',
-      white: '#FFFFFF',
-      gray: '#1E1E1E',
+    extend: {
+      colors: {
+        'codim-black': '#0A0A0A',
+        'codim-red': '#D90429',
+        'codim-white': '#FFFFFF',
+        'codim-gray': '#1E1E1E',
+      },
     },
-    extend: {},
   },
   plugins: [],
 }
