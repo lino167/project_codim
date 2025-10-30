@@ -1,65 +1,98 @@
-import Image from "next/image";
- 
-export default function Home() {
+import Link from "next/link";
+import { orbitron } from "../styles/fonts";
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="mx-auto max-w-[1280px] px-6 lg:px-10">
+      {/* Hero */}
+      <section className="relative grid items-center py-16 md:py-20 lg:py-24 min-h-[65vh] md:min-h-[75vh] lg:min-h-[80vh] md:grid-cols-2 gap-10">
+        {/* Gradiente/halo decorativo */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(600px 400px at 0% 0%, rgba(217,4,41,0.15), rgba(217,4,41,0.0) 60%), radial-gradient(500px 350px at 80% 10%, rgba(217,4,41,0.08), rgba(217,4,41,0.0) 60%)",
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+
+        {/* Coluna de texto */}
+        <div className="text-center md:text-left">
+          <h1 className={`${orbitron.className} fade-up text-4xl md:text-5xl font-bold`}>
+            Tecnologia com propósito. Resultados de verdade.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          <p className="fade-up mt-4 md:mt-5 text-codim-gray max-w-2xl md:max-w-xl mx-auto md:mx-0">
+            Desenvolvo sites, sistemas, apps, APIs e automações com design minimalista, performance e segurança.
+          </p>
+          <div className="fade-up mt-7 flex flex-col sm:flex-row items-center md:items-start gap-4">
+            <Link
+              href="/contato"
+              aria-label="Solicitar orçamento"
+              className="inline-flex h-11 items-center justify-center rounded-xl px-6 bg-codim-red text-codim-white transition will-change-transform hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(217,4,41,0.4)] focus:outline-none focus:ring-2 focus:ring-codim-red focus:ring-offset-2 focus:ring-offset-codim-black"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Solicitar orçamento
+            </Link>
+            <Link
+              href="/portfolio"
+              aria-label="Ver portfólio"
+              className="inline-flex h-11 items-center justify-center rounded-xl px-6 border border-white text-white transition hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-codim-black"
             >
-              Learning
-            </a>{" "}
-            center.
+              Ver portfólio
+            </Link>
+          </div>
+          <p className="fade-up mt-4 text-xs text-codim-gray">
+            SSR/SSG · PWA · Integrações · Dashboards · UX/SEO
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Coluna decorativa (placeholder visual) */}
+        <div className="hidden md:block">
+          <div className="h-64 lg:h-80 rounded-xl bg-gradient-to-br from-codim-red/20 via-codim-red/10 to-transparent border border-codim-gray/30 shadow-soft" />
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Sobre */}
+      <section className="py-20 lg:py-24">
+        <h2 className={`${orbitron.className} text-2xl md:text-3xl font-semibold`}>Sobre</h2>
+        <p className="mt-3 text-codim-gray max-w-3xl">
+          Somos uma equipe focada em engenharia de software, design e performance. Entregamos produtos
+          com código limpo, acessibilidade e atenção ao detalhe.
+        </p>
+      </section>
+
+      {/* Serviços */}
+      <section className="py-20 lg:py-24">
+        <h2 className={`${orbitron.className} text-2xl md:text-3xl font-semibold`}>Serviços</h2>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="rounded-xl shadow-soft border border-codim-gray/30 p-6 bg-codim-black/40">
+            <h3 className="text-lg font-semibold">Sites e Landing Pages</h3>
+            <p className="mt-2 text-codim-gray">Páginas rápidas, responsivas e otimizadas para conversão.</p>
+          </div>
+          <div className="rounded-xl shadow-soft border border-codim-gray/30 p-6 bg-codim-black/40">
+            <h3 className="text-lg font-semibold">Aplicações Web</h3>
+            <p className="mt-2 text-codim-gray">SPA/SSR com arquitetura moderna e escalável.</p>
+          </div>
+          <div className="rounded-xl shadow-soft border border-codim-gray/30 p-6 bg-codim-black/40">
+            <h3 className="text-lg font-semibold">Consultoria Técnica</h3>
+            <p className="mt-2 text-codim-gray">Apoio em performance, acessibilidade e melhores práticas.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="py-20 lg:py-24 text-center">
+        <h2 className={`${orbitron.className} text-2xl md:text-3xl font-semibold`}>Pronto para começar?</h2>
+        <p className="mt-3 text-codim-gray">Conte sua ideia e vamos construir juntos.</p>
+        <div className="mt-6">
+          <Link
+            href="/contato"
+            className="inline-flex h-11 items-center justify-center rounded-xl px-6 bg-codim-red text-codim-white transition will-change-transform hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(217,4,41,0.4)] focus:outline-none focus:ring-2 focus:ring-codim-red focus:ring-offset-2 focus:ring-offset-codim-black"
+            aria-label="Abrir página de contato"
+          >
+            Entre em contato
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
