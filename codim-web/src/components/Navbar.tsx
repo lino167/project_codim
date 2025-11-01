@@ -46,11 +46,11 @@ export default function Navbar() {
     >
       <div className="navbar-container">
         {/* LOGO (usa arquivo da pasta /public) */}
-        <Link href="/" aria-label="Codim — Início" className="navbar-logo">
+        <Link href="/" aria-label="Codim — Inicio" className="navbar-logo">
           <span className="navbar-logo-desktop">
             <Image
               src="/Codim_Branco_vermelho.png"
-              alt="Codim — Código com propósito"
+              alt="Codim — Codigo com proposito"
               width={144}
               height={28}
               priority
@@ -60,7 +60,7 @@ export default function Navbar() {
           <span className="navbar-logo-mobile">
             <Image
               src="/Icone_Codim_Branco_vermelho.png"
-              alt="Codim — Ícone"
+              alt="Codim — Icone"
               width={42}
               height={42}
               priority
@@ -104,6 +104,13 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* OVERLAY */}
+      <div
+        className={`drawer-overlay ${open ? 'active' : ''}`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
 
       {/* DRAWER MOBILE */}
       <aside
@@ -178,3 +185,5 @@ function IconClose() {
     </svg>
   )
 }
+
+

@@ -12,7 +12,7 @@ import {
   Home,
 } from 'lucide-react'
 
-import { codimFooter, codimHero, codimIdentity } from '@/content/codim'
+import { codimFooter, codimHome, codimIdentity } from '@/content/codim'
 import { NAV_LINKS } from '@/data/navigation'
 
 const quickLinkIcons = {
@@ -46,7 +46,7 @@ export default function Footer() {
         <div>
           <span className='footer-pill'>{codimIdentity.slogan}</span>
           <h3>{codimFooter.tagline}</h3>
-          <p className='footer-summary'>{codimHero.description}</p>
+          <p className='footer-summary'>{codimHome.hero.description}</p>
         </div>
         <div className='footer-cta'>
           <Link href='/contato' className='btn-primary'>
@@ -98,12 +98,18 @@ export default function Footer() {
           <ul className='footer-social'>
             {codimFooter.social.map((link) => {
               const Icon = socialIcons[link.label as keyof typeof socialIcons] ?? MessageCircle
+              const isExternal = link.href.startsWith('http')
               return (
                 <li key={link.href}>
-                  <Link href={link.href} className='footer-social-link'>
+                  <a
+                    href={link.href}
+                    className='footer-social-link'
+                    target={isExternal ? '_blank' : undefined}
+                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                  >
                     <Icon aria-hidden='true' />
                     <span>{link.label}</span>
-                  </Link>
+                  </a>
                 </li>
               )
             })}
